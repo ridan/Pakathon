@@ -19,7 +19,14 @@ System.register(function(app, auth, database) {
   System.routes(app, auth, database);
 
   System.aggregateAsset('css', 'common.css');
-
+  System.aggregateAsset('css', 'bootstrap.css');
+  System.aggregateAsset('css', 'bootstrap.min.css');
+  System.aggregateAsset('css', 'modern-business.css');
+  System.aggregateAsset('js','jquery-1.11.0.js', {global:true});
+  System.aggregateAsset('js','bootstrap.js', {global:true});
+  System.aggregateAsset('js','bootstrap.min.js', {global:true});
+  System.aggregateAsset('js','contact_me.js', {global:true});
+  System.aggregateAsset('js','jqBootstrapValidation.js', {global:true});
   // The middleware in config/express will run before this code
 
   // Set views path, template engine and default layout
