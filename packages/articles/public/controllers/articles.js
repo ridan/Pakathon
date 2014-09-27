@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('mean.articles').controller('ArticlesController', ['$scope', '$stateParams', '$location', 'Global', 'Articles',
-  function($scope, $stateParams, $location, Global, Articles) {
+  function($scope, $stateParams, $location, Global, Articles, $modal, $modalInstance, items) {
     $scope.global = Global;
 
     $scope.hasAuthorization = function(article) {
@@ -71,5 +71,21 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         $scope.article = article;
       });
     };
+
+  $scope.open = function (size) {
+    alert("pluck in");
+
+    var modalInstance = $modal.open({
+      template: 'Sup',
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+  }
+
+
+
   }
 ]);

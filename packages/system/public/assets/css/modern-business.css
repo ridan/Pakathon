@@ -25,9 +25,7 @@ body {
 
 /* Home Page Carousel */
 
-header.carousel {
-    height: 50%;
-}
+
 
 header.carousel .item,
 header.carousel .item.active,

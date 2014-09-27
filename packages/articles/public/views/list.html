@@ -1,10 +1,94 @@
 <section data-ng-controller="ArticlesController" data-ng-init="find()">
-  <ul class="articles unstyled">
-    <li data-ng-repeat="article in articles">
-      <span>{{article.created | date:'medium'}}</span> /
-      <span>{{article.user.name}}</span>
-      <h2>
-        <a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a>
+ <style>
+  #box {
+    height: 78px;
+    overflow: hidden;
+  }
+
+  #box1 {
+    height: 35px;
+   overflow: hidden;
+  }
+    
+   header.carousel {
+      height: 250px;
+        }
+
+
+    .carousel-caption {
+
+  padding-bottom: 15px;
+  }
+
+.carousel-indicators {
+bottom: 5px;
+}
+  
+</style>
+
+<!-- Header Carousel -->
+        <header id="myCarousel" class="carousel slide" width ="100px" height="300px">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" width ="100px" height="300px">
+                <div class="item active">
+                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                    <div class="carousel-caption">
+                        <h4>Caption 1</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div  style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                    <div class="carousel-caption">
+                        <h4>Caption 2</h4>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                    <div class="carousel-caption">
+                        <h3>Caption 3</h3>
+                    </div>
+                </div>
+            </div>
+
+        <!-- Controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="icon-prev"></span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="icon-next"></span>
+            </a>
+        </header>
+<hr>
+<!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Welcome to Modern Business
+                </h1>
+                <br><br>
+            </div>
+        </div>
+
+  <div class="articles unstyled">
+    <div data-ng-repeat="article in articles">
+
+      <div  >
+            <div class="col-md-4 img-portfolio">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
+                </a>
+                 <span>{{article.created | date:'medium'}}</span> /
+      <span class="item item-text-wrap">{{article.user.name}}</span>
+      <h2><div class="item item-text-wrap" id="box1">
+        <a data-ng-href="#!/articles/{{article._id}}" >{{article.title}}</a>
+        </div>
         <span data-ng-if="hasAuthorization(article)">
           <a class="btn" href="/#!/articles/{{article._id}}/edit">
             <i class="glyphicon glyphicon-edit"></i>
@@ -14,8 +98,12 @@
           </a>
         </span>
       </h2>
-      <div>{{article.content}}</div>
-    </li>
-  </ul>
+      <div class="item item-text-wrap" id="box">{{article.content}}</div>
+            </div>
+       
+        </div>
+      </div>
+
+  </div>
   <h1 data-ng-hide="!articles || articles.length">No articles yet. <br> Why don't you <a href="/#!/articles/create">Create One</a>?</h1>
 </section>

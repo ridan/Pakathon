@@ -5834,7 +5834,7 @@ button.close {
 }
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   left: 50%;
   z-index: 15;
   width: 60%;
@@ -5864,11 +5864,11 @@ button.close {
 .carousel-caption {
   position: absolute;
   right: 15%;
-  bottom: 20px;
+  bottom: 10px;
   left: 15%;
   z-index: 10;
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
@@ -5897,10 +5897,10 @@ button.close {
   .carousel-caption {
     right: 20%;
     left: 20%;
-    padding-bottom: 30px;
+    padding-bottom: 5px;
   }
   .carousel-indicators {
-    bottom: 20px;
+    bottom: 5px;
   }
 }
 .clearfix:before,
