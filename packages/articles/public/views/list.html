@@ -43,21 +43,21 @@ bottom: 5px;
             <!-- Wrapper for slides -->
             <div class="carousel-inner" width ="100px" height="300px">
                 <div class="item active">
-                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                    <div class="fill" style="background-image:url('https://s3.amazonaws.com/pakathon2014/20121023_Pipeline-Kahramma-01.jpg');"></div>
                     <div class="carousel-caption">
-                        <h4>Caption 1</h4>
+                        <h4>Collaborate</h4>
                     </div>
                 </div>
                 <div class="item">
-                    <div  style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                   <div class="fill" style="background-image:url('https://s3.amazonaws.com/pakathon2014/fracking-rig.jpg');"></div>
                     <div class="carousel-caption">
-                        <h4>Caption 2</h4>
+                        <h4>Invest</h4>
                     </div>
                 </div>
                 <div class="item">
-                    <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                    <div class="fill" style="background-image:url('https://s3.amazonaws.com/pakathon2014/edmontonterminal_705.jpg');"></div>
                     <div class="carousel-caption">
-                        <h3>Caption 3</h3>
+                        <h4>Build Pakistan</h4>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@ bottom: 5px;
       <div  >
             <div class="col-md-4 img-portfolio">
               <div class="crop" >
-                <a href="portfolio-item.html" >
+                <a href="#!/articles/{{article._id}}" >
                     <img class="img-responsive img-hover" src="{{article.image}}" alt="">
                 </a>
                 </div>
@@ -96,6 +96,7 @@ bottom: 5px;
       <h2><div class="item item-text-wrap" id="box1">
         <a data-ng-href="#!/articles/{{article._id}}" >{{article.title}}</a>
         </div>
+        <!--
         <span data-ng-if="hasAuthorization(article)">
           <a class="btn" href="/#!/articles/{{article._id}}/edit">
             <i class="glyphicon glyphicon-edit"></i>
@@ -104,6 +105,7 @@ bottom: 5px;
             <i class="glyphicon glyphicon-trash"></i>
           </a>
         </span>
+      -->
       </h2>
       <div class="item item-text-wrap" id="box">{{article.subtitle}}</div>
             </div>

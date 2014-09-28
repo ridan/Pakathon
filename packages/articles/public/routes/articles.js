@@ -11,12 +11,15 @@ angular.module('mean.articles').config(['$stateProvider',
       // Make an AJAX call to check if the user is logged in
       $http.get('/loggedin').success(function(user) {
         // Authenticated
-        if (user !== '0') $timeout(deferred.resolve);
+        if (user !== '0')
 
+         $timeout(deferred.resolve);
+      
         // Not Authenticated
         else {
+      
           $timeout(deferred.reject);
-          $location.url('/login');
+          $location.url('/auth/login');
         }
       });
 
@@ -26,11 +29,11 @@ angular.module('mean.articles').config(['$stateProvider',
     // states for my app
     $stateProvider
       .state('all articles', {
-        url: '/articles',
+        url: '/',
         templateUrl: 'articles/views/list.html',
-        resolve: {
+       /* resolve: {
           loggedin: checkLoggedin
-        }
+        }*/
       })
       .state('create article', {
         url: '/articles/create',
@@ -50,8 +53,11 @@ angular.module('mean.articles').config(['$stateProvider',
         url: '/articles/:articleId',
         templateUrl: 'articles/views/view.html',
         resolve: {
+      
           loggedin: checkLoggedin
+
         }
       });
+
   }
 ]);
