@@ -1,34 +1,43 @@
 
 
-
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
 
- <head>
+<style>
+.crop {
+ 
+    height: 250px;
+    overflow: hidden;
+}  
+</style>
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-  </head>
 
 
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
+         <div>
+
+            <div class="col-md-4 col-sm-6" >
+              <div class="crop" >
+                    <img  class="img-responsive img-portfolio img-hover" src="{{article.msc[1].pic}}" alt="">
+            </div>
             </div>
             <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
+              <div class="crop" >
+                    <img class="img-responsive img-portfolio img-hover" src="{{article.msc[2].pic}}" alt="">
             </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="http://placehold.it/700x450" alt="">
-                </a>
             </div>
 
+            <div class="col-md-4 col-sm-6" >
+            
+             <div class="crop" >
 
-       
+                    <img  class="img-responsive img-portfolio img-hover" src="{{article.msc[3].pic}}" alt="">
+    
+            </div>
+           
+            </div>
+        </div>
+<div style="padding-top: 30px"> </div>
 
-  <h2><center>{{article.title}} I am boss </center></h2>
+<h2><center>{{article.title}}</center></h2>
   <button class="btn btn-default" ng-click="expandBidForm=!expandBidForm"> Make a Bid</button>
   <div ng-show="expandBidForm">
     <div class="row">
@@ -37,27 +46,21 @@
             <form name="sentMessage" id="contactForm" novalidate>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Full Name:</label>
+                        <label>Bid Amount:</label>
                         <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
                         <p class="help-block"></p>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Phone Number:</label>
+                        <label>Return on Investment (ROI)</label>
                         <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Email Address:</label>
-                        <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
-                    </div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Bid Amount:</label>
-                        <textarea class="form-control" id="message" required data-validation-required-message="Please enter your bid ammount in dollars." maxlength="100" style="resize:none"></textarea>
+                        <label>Terms and Conditions:</label>
+                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your bid ammount in dollars." maxlength="100" style="resize:none"></textarea>
                     </div>
                 </div>
                 <div id="success"></div>
@@ -76,5 +79,62 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <div>{{article.content}}</div>
+  <div>Abstract: <br> {{article.shortDescription}}
+<br><br></div>
+
+  <div>Description: <br> {{article.longDescription}}
+<br><br></div>
+
+    <div>
+
+
+    </div>
+
+<div>
+Bid start
+<br>
+{{article.bidStart}}
+<br><br>
+Bid end
+<br>
+{{article.bidEnd}}
+<br><br>
+Bid State
+<br>
+{{article.bidState}}       
+<br><br>
+Govt percent
+<br>
+{{article.GovtPercent}}       
+ <div style="padding:10px">
+<center><img  src="{{article.msc[0].pic}}" ></center>
+ </div>
+ 
+ 
+</div>
+
+<a href="{{article.financialReport}}">
+<button class="btn btn-primary btn-lg btn-block">This is the link to the financial report PDF</button>
+</a>
+
+
+<button ng-click="myFunction()">Try it</button>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
 </section>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script type="text/javascript">
+
+</script>
+
+
+

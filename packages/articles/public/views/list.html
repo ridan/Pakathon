@@ -24,6 +24,11 @@
 bottom: 5px;
 }
   
+.crop {
+ 
+    height: 250px;
+    overflow: hidden;
+}  
 </style>
 
 <!-- Header Carousel -->
@@ -81,9 +86,11 @@ bottom: 5px;
 
       <div  >
             <div class="col-md-4 img-portfolio">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
+              <div class="crop" >
+                <a href="portfolio-item.html" >
+                    <img class="img-responsive img-hover" src="{{article.image}}" alt="">
                 </a>
+                </div>
                  <span>{{article.created | date:'medium'}}</span> /
       <span class="item item-text-wrap">{{article.user.name}}</span>
       <h2><div class="item item-text-wrap" id="box1">
@@ -98,7 +105,7 @@ bottom: 5px;
           </a>
         </span>
       </h2>
-      <div class="item item-text-wrap" id="box">{{article.content}}</div>
+      <div class="item item-text-wrap" id="box">{{article.subtitle}}</div>
             </div>
        
         </div>

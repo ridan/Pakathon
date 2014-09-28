@@ -85,6 +85,10 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
     });
   }
 
+  $scope.myFunction= function() {
+        window.open("articles/public/views/index.htm", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
+}
+
 
 
   }
