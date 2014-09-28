@@ -1,3 +1,6 @@
+<html>
+  
+   
 
 
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
@@ -10,36 +13,10 @@
 }  
 </style>
 
-
-
-         <div>
-
-            <div class="col-md-4 col-sm-6" >
-              <div class="crop" >
-                    <img  class="img-responsive img-portfolio img-hover" src="{{article.msc[1].pic}}" alt="">
-            </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="crop" >
-                    <img class="img-responsive img-portfolio img-hover" src="{{article.msc[2].pic}}" alt="">
-            </div>
-            </div>
-
-            <div class="col-md-4 col-sm-6" >
-            
-             <div class="crop" >
-
-                    <img  class="img-responsive img-portfolio img-hover" src="{{article.msc[3].pic}}" alt="">
-    
-            </div>
-           
-            </div>
-        </div>
-<div style="padding-top: 30px"> </div>
-
-<h2><center>{{article.title}}</center></h2>
-  <button class="btn btn-default" ng-click="expandBidForm=!expandBidForm"> Make a Bid</button>
-  <div ng-show="expandBidForm">
+<div style="padding-bottom: 30px">
+<button class="btn btn-default btn-lg btn-block btn-success" ng-click="expandBidForm=!expandBidForm"> Make a Bid</button>
+</div>
+          <div ng-show="expandBidForm">
     <div class="row">
         <div class="col-md-8">
             <h3>How much do you want to bid?</h3>
@@ -71,6 +48,61 @@
     </div>
   </div>
 
+
+         <div>
+
+            <div class="col-md-4 col-sm-6" >
+              <div class="crop" >
+                    <img  class="img-responsive img-portfolio img-hover" src="{{article.msc[1].pic}}" alt="">
+            </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+              <div class="crop" >
+                    <img class="img-responsive img-portfolio img-hover" src="{{article.msc[2].pic}}" alt="">
+            </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6" >
+            
+             <div class="crop" >
+
+                    <img  class="img-responsive img-portfolio img-hover" src="{{article.msc[3].pic}}" alt="">
+    
+            </div>
+           
+            </div>
+        </div>
+
+
+        <div style="padding-top: 30px"> </div>
+
+        <h2><center>{{article.title}}</center></h2>
+
+        <ul class="nav nav-pills">
+            <li ng-class="{ active:isSet(7) }">
+              <a href ng-click="setTab(7)">Summary</a>
+            </li>
+            <li ng-class="{ active:isSet(8) }">
+              <a href ng-click="setTab(8)">Project Requirement</a>
+            </li>
+          <li ng-class="{ active:isSet(9) }">
+              <a href ng-click="setTab(9)">Tendor Specifications</a>
+            </li>
+            <li ng-class="{ active:isSet(10) }">
+              <a href ng-click="setTab(10)">Place a Bid</a>
+            </li>
+            <li ng-class="{ active:isSet(11) }">
+              <a href ng-click="setTab(11)">Appendix</a>
+            </li>
+              <li ng-class="{ active:isSet(12) }">
+              <a href ng-click="setTab(12)">Additional Files</a>
+            </li>
+
+        </ul>
+
+          <div  ng-if="isSet(7)" >
+          <div >
+
   <div data-ng-if="hasAuthorization(article)">
     <a class="btn" href="/#!/articles/{{article._id}}/edit">
       <i class="glyphicon glyphicon-edit"></i>
@@ -79,62 +111,72 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <div>Abstract: <br> {{article.shortDescription}}
+  <div><h2>Abstract: </h2><br> {{article.shortDescription}}
 <br><br></div>
 
-  <div>Description: <br> {{article.longDescription}}
+  <div><h2>Description: </h2><br> {{article.longDescription}}
 <br><br></div>
 
     <div>
-
-
     </div>
 
 <div>
-Bid start
+<h3>Bid start</h3>
+ <span><font size="4">{{article.created | date:'medium'}}</font></span> 
 <br>
-{{article.bidStart}}
-<br><br>
-Bid end
+<h3>Bid end</h3>
+<span><font size="4">Oct 27, 2014 4:20:31 PM </font></span> 
 <br>
-{{article.bidEnd}}
-<br><br>
-Bid State
+<h3>Bid State</h3>
+<font size="4">{{article.bidState}} </font>      
 <br>
-{{article.bidState}}       
-<br><br>
-Govt percent
-<br>
-{{article.GovtPercent}}       
- <div style="padding:10px">
-<center><img  src="{{article.msc[0].pic}}" ></center>
- </div>
+<h3>Govt percent</h3>
+<font size="4">{{article.GovtPercent}}</font>       
+
+
+   </div>
+        </div>
+      </div>
+
+           <div  ng-if="isSet(8)" >
+          <div >
+            This is second card
+          </div>
+        </div>
+
+         <div  ng-if="isSet(9)" >
+          This is the third tab.
+          <div >
+               <div style="padding:30px">
+            <center><img  src="{{article.msc[0].pic}}" ></center>
+             </div>
  
- 
-</div>
+            </div>
 
-<a href="{{article.financialReport}}">
-<button class="btn btn-primary btn-lg btn-block">This is the link to the financial report PDF</button>
-</a>
+            <a href="{{article.financialReport}}">
+            <button class="btn btn-primary btn-lg btn-block">This is the link to the financial report PDF</button>
+            </a>
 
-
-<button ng-click="myFunction()">Try it</button>
+          </div>
 
 <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
+
+
+        <div class="row">
+            <div class="span9">
+                <div class="row">
+                    <highchart id="chart1" config="chartConfig" class="span9" ></highchart>
+                </div>
+          
+            </div>
+        </div>
 
 
 </section>
+</html>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
 
-<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
-
-<script type="text/javascript">
-
-</script>
 
 
 
